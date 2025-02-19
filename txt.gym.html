@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="amit.css">
+    
+        <!-- Correct Font Awesome CDN -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    </head>
+    
+</head>
+<body>
+    <div class="container">
+        
+        
+
+
+        <!-- main -->
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <h1>GetFit's</h1>
+                </div>
+                <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+<ul id="menu">
+    <li><a href="#home">HOME</a></li>
+    <li><a href="#program">PROGRAM</a></li>
+    <li><a href="#plan">PLAN</a></li>
+    <li><a href="#blog">BLOG</a></li>
+    <li><a href="#contact">CONTACT US</a></li>
+</ul>
+
+                </ul>
+                
+
+            </nav>
+            <div class="home" id="home">
+                <div class="homeText">
+                    <h1>Commit To Be Fit</h1>
+                    <h3>Once You See Result, It Becomes An Addiction</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias,<br>
+                        culpa ipsam.adipisicing elit. Alias, culpa ipsam.</p>
+                        
+                        <button onclick="openOTPModal()">Join Now</button>
+
+                        <!-- OTP Modal -->
+                        <div id="otpModal" class="modal" style="display: none;">
+                            <div class="modal-content">
+                                <h3>Enter Phone Number</h3>
+                                <input type="text" id="phoneNumber" placeholder="Enter phone number">
+                                <button onclick="sendOTP()">Send OTP</button>
+                                <p id="otpMessage"></p>
+                    
+                                <input type="text" id="otpInput" placeholder="Enter OTP">
+                                <button onclick="verifyOTP()">Verify OTP</button>
+                    
+                                <button onclick="closeModal()">Close</button>
+                            </div>
+                        </div>
+                        <script>
+                            let generatedOTP = "";
+                    
+                            function openOTPModal() {
+                                document.getElementById("otpModal").style.display = "block";
+                            }
+                    
+                            function closeModal() {
+                                document.getElementById("otpModal").style.display = "none";
+                            }
+                    
+                            function sendOTP() {
+                                let phoneNumber = document.getElementById("phoneNumber").value;
+                    
+                                if (phoneNumber === "") {
+                                    alert("Please enter a phone number!");
+                                    return;
+                                }
+                    
+                                // 6-Digit OTP Generate
+                                generatedOTP = Math.floor(100000 + Math.random() * 900000).toString();
+                    
+                                // Console me OTP Show Karega
+                                console.log("Generated OTP:", generatedOTP);
+                    
+                                // User ko message dikhana
+                                document.getElementById("otpMessage").innerText = `OTP Sent to ${phoneNumber}: ${generatedOTP}`;
+                            }
+                    
+                            function verifyOTP() {
+                                let enteredOTP = document.getElementById("otpInput").value;
+                    
+                                if (enteredOTP === generatedOTP) {
+                                    alert("OTP Verified Successfully!");
+                                    closeModal();
+                                } else {
+                                    alert("Invalid OTP! Please try again.");
+                                }
+                            }
+                        </script>
+                    <video id="bgVideo" width="80%" height="300%" autoplay muted loop playsinline>
+                        <source src="https://cdn.pixabay.com/video/2024/06/27/218489_large.mp4" type="video/mp4">
+                    </video>
+                    
+                    
+                    
+                    
+            </div>
+            <img src="men.png" alt="">
+        </div>
+        <!-- OTP Modal -->
+    <div id="otpModal" class="modal">
+        <div class="modal-content">
+            <h3>Enter Phone Number</h3>
+            <input type="text" id="phoneNumber" placeholder="Enter phone number">
+            <button onclick="sendOTP()">Send OTP</button>
+            <p id="otpMessage"></p>
+
+            <input type="text" id="otpInput" placeholder="Enter OTP">
+            <button onclick="verifyOTP()">Verify OTP</button>
+
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+        
+
+        <!-- program -->
+
+        <div class="program" id="program">
+            <div class="head">
+                <h1>Our <span>Program's</span></h1>
+            </div>
+            <div class="ourProgram">
+                <div class="crd">
+                    <img src="https://img.freepik.com/free-photo/young-woman-having-fun-zumba_23-2149047675.jpg?ga=GA1.1.1230823910.1729675768&semt=ais_authors_boost" alt="" width="60%" height="100%">
+                    <h3>Dance</h3>
+                </div>
+                <div class="crd">
+                    <img src="https://img.freepik.com/free-photo/front-view-fit-shirtless-man-with-weights_23-2148700662.jpg?ga=GA1.1.1230823910.1729675768&semt=ais_authors_boost" alt="" width="60%" height="100%">
+                    <h3>Cardio</h3>
+                </div>
+                <div class="crd">
+                    <img src="https://img.freepik.com/premium-photo/muscular-fitness-sports-man-athlete-with-weight_286419-81.jpg?ga=GA1.1.1230823910.1729675768&semt=ais_authors_boost" alt="" width="60%" height="100%">
+                    <h3>Heavy Weight</h3>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- plans -->
+
+        <div class="plan" id="plan">
+            <div class="head">
+                <h1>Our <span>Plan's</span></h1>
+            </div>
+            <div class="ourPlan">
+                <div class="card">
+                    <i class="fa-solid fa-bookmark"></i>
+                    <h3>Basic Package</h3>
+                    <h1>30 Day in Rupees-199</h1>
+                    <p>No Personal Trainer</p>
+                    <p>Valid for 30 Days</p>
+                    <p>Full Day valid</p>
+                    <p>Lorem, ipsumipsum.</p>
+                    <p>Lorem, ipsumipsum.</p>
+                    <button>Buy Plan</button>
+
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-diamond"></i>
+                    <h3>Premium Package</h3>
+                    <h1>30 Day in Rupees-399</h1>
+                    <p>Personal Trainer</p>
+                    <p>Valid for 30 Days</p>
+                    <p>Full Day valid</p>
+                    <p>Lorem, ipsumipsum.</p>
+                    <p>Lorem, ipsumipsum.</p>
+                    <button>Buy Plan</button>
+
+
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    <h3>Diamond Package</h3>
+                    <h1>60 Day in Rupees-599</h1>
+                    <p>Personal Trainer</p>
+                    <p>Valid for 60 Days</p>
+                    <p>Full Day valid</p>
+                    <p>Lorem, ipsumipsum.</p>
+                    <p>Lorem, ipsumipsum.</p>
+                    <button>Buy Plan</button>
+
+
+                </div>
+            </div>
+        </div>
+        <button class="chat-btn" onclick="toggleChat()">💬 Chat with Us</button>
+
+<div id="chatBox">
+    <div class="chat-header">
+        <span>Live Chat</span>
+        <button onclick="toggleChat()">❌</button>
+    </div>
+    <div class="chat-body">
+        <p>Hello! How can we help you?</p>
+        <input type="text" placeholder="Type your message..." id="userMessage">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+
+        <!-- blog -->
+
+<div class="blog" id="blog">
+    <div class="head">
+        <h1>Our <span>Blog</span></h1>
+        <p>Stay updated with our latest fitness tips and guides</p>
+    </div>
+    <div class="ourBlog">
+        <div class="blogCard">
+            <img src="https://img.freepik.com/premium-photo/smiling-girl-sits-floor-home-online-fit-training-laptop_266732-20110.jpg?uid=R187587734&ga=GA1.1.1230823910.1729675768&semt=ais_hybrid" alt="How To Make Abs?">
+            <div class="blogText">
+                <h3>How To Make Abs?</h3>
+                <p>Learn the best exercises and diet tips to sculpt your abs effectively.</p>
+                <a href="https://www.insider.com/guides/health/fitness/how-to-get-abs" target="_blank">Read More</a>
+            </div>
+        </div>
+        <div class="blogCard">
+            <img src="https://img.freepik.com/free-psd/gym-fitness-poster-template_23-2149084700.jpg?uid=R187587734&ga=GA1.1.1230823910.1729675768&semt=ais_hybrid" alt="Best Cardio Workouts">
+            <div class="blogText">
+                <h3>Best Cardio Workouts</h3>
+                <p>Discover top cardio routines to burn fat and improve endurance.</p>
+                <a href="https://www.healthline.com/nutrition/best-cardio-workouts" target="_blank">Read More</a>
+            </div>
+        </div>
+        <div class="blogCard">
+            <img src="https://img.freepik.com/premium-psd/fitness-gym-social-media-post-template_854300-42.jpg?uid=R187587734&ga=GA1.1.1230823910.1729675768&semt=ais_hybrid" alt="Weight Training Benefits">
+            <div class="blogText">
+                <h3>Weight Training Benefits</h3>
+                <p>Why weightlifting is essential for strength, metabolism, and overall health.</p>
+                <a href="https://www.verywellfit.com/benefits-of-weight-training-4158703" target="_blank">Read More</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+        
+        <!-- footer -->
+
+        <div class="footer" >
+            <div class="footerText">
+                <h2>About us</h2>
+                <p>Lorem ipsum dolor sit amet consectetur <br>
+                    adipisicing elit. Cupiditate voluptatem <br>
+                    necessitatibus atque sapiente quia asper?<br>
+                    Beatae voluptates dicta fuga dolorum<br>
+                    nihil fugit.</p>
+                
+
+            </div>
+            <div class="footerText">
+                <h2>Plans</h2>
+                <p>Transaarent</p>
+                <p>Account</p>
+                <p>Valid</p>
+                <p>Ends</p>
+
+            </div>
+            <div class="footerText">
+                <h2>Contact US</h2>
+                <p>Membership</p>
+                <p>Plan</p>
+                <p>Diamond Plan</p>
+                <p>Join Now</p>
+
+            </div>
+            <div class="footerText">
+                <h2>Program</h2>
+                <p>Dance</p>
+                <p>Cardio</p>
+                <p>Cardio</p>
+                <p>Cardio</p>
+
+            </div>
+            
+            <div class="footerSocial">
+                <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://instagram.com/shatrughanverma6420" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://www.youtube.com/" target="_blank">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                
+            </div>
+            
+        </div>
+        
+        </div> 
+        <!-- Join Now Button -->
+
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+ </html>
